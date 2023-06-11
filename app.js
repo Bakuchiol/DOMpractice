@@ -170,3 +170,80 @@ const baby = {
         },
 ]
 }
+
+// make button in place of price for baby SHOP NOW
+
+let mainImage = document.querySelector('.mainImg');
+let itemImg = document.querySelector('.productItems');
+
+// --------- WOMENS ---------- //
+const changeWomens = () => {
+    changeWomensProduct(),
+    changeWomenTopPic()
+}
+// top pic
+const changeWomenTopPic = () => {
+    let newImg = document.createElement('img');
+        newImg.setAttribute('src', womens.mainImage);
+        newImg.classList.add('topImg', 'mainImg');
+        newImg.style.marginLeft = "145px";
+        mainImage.replaceWith(newImg)
+}
+// products
+const changeWomensProduct = () => {
+    itemImg.replaceChildren();
+    womens.productImages.forEach((obj)=>{
+        let items = document.createElement('img');
+        items.setAttribute('src', obj.pic);
+        items.setAttribute('class', 'productItem');
+        itemImg.append(items)
+    })
+}
+
+// ------------ Kids ------------------------------------- //
+const changeKids = () => {
+    changeKidsTopPic(),
+    changeKidsProduct()
+}
+//top pic
+const changeKidsTopPic = () => {
+    let newImg = document.createElement('img');
+        newImg.setAttribute('src', kids.mainImage);
+        newImg.classList.add('topImg', 'mainImg');
+        newImg.style.marginLeft = "145px";
+        mainImage.replaceWith(newImg)
+}
+// product
+const changeKidsProduct = () => {
+    itemImg.replaceChildren();
+    kids.productImages.forEach((obj)=>{
+        let items = document.createElement('img');
+        items.setAttribute('src', obj.pic);
+        items.setAttribute('class', 'productItem');
+        itemImg.append(items)
+    })
+}
+
+// -------- BABY -------------------------------------------- //
+const changeBaby = () => {
+    changeBabyTopPic(),
+    changeBabyProduct()
+}
+//top pic
+const changeBabyTopPic = () => {
+    let newImg = document.createElement('img');
+        newImg.setAttribute('src', baby.mainImage);
+        newImg.classList.add('topImg', 'mainImg');
+        newImg.style.marginLeft = "145px";
+        mainImage.replaceWith(newImg)
+}
+// product
+const changeBabyProduct = () => {
+    itemImg.replaceChildren();
+    baby.productImages.forEach((obj)=>{
+        let items = document.createElement('img');
+        items.setAttribute('src', obj.pic);
+        items.setAttribute('class', 'productItem');
+        itemImg.append(items)
+    })
+}
