@@ -171,7 +171,13 @@ let mainImage = document.querySelector('.mainImg');
 let itemImg = document.querySelector('.productItems');
 let gender = document.querySelector('#gender');
 let title = document.querySelector('#role');
-let productName = document.querySelector('.name');
+let mainText = document.querySelector('.mainPromo')
+let mainTitle = document.querySelector('#title');
+let mainDesc = document.querySelector('.desc');
+let mainPrice = document.querySelector('#price');
+// ?
+let productName = document.querySelector('.product');
+let tag = document.querySelector('.name')
 
 const noLogo = () => {
     document.querySelector('#air').style.display = 'none';
@@ -183,7 +189,14 @@ const changeWomens = () => {
     changeWomensProduct(),
     changeWomenTopPic(),
     changeWomenSub(),
-    noLogo()
+    noLogo(),
+    newMainWomen(),
+    productWomenNames()
+}
+// subnav + TITLE
+const changeWomenSub = () => {
+    gender.textContent = "Women";
+    title.textContent = "WOMEN";
 }
 // top pic
 const changeWomenTopPic = () => {
@@ -193,6 +206,13 @@ const changeWomenTopPic = () => {
         newImg.style.marginLeft = "145px";
         mainImage.replaceWith(newImg)
 }
+// top pic desc
+const newMainWomen = () => {
+    mainTitle.textContent = "U Crew Neck T-Shirts";
+    mainDesc.textContent = "An Elevated wardrobe essential designed with careful attention to details.";
+    mainPrice.textContent = "$14.90";
+}
+
 // products
 const changeWomensProduct = () => {
     itemImg.replaceChildren();
@@ -203,28 +223,46 @@ const changeWomensProduct = () => {
         itemImg.append(items);
     })
 }
-// subnav + TITLE
-const changeWomenSub = () => {
-    gender.textContent = "Women";
-    title.textContent = "WOMEN";
-}
+// ???
 // product names
-const productNames = () => {
-    itemImg.replaceChildren();
-    womens.productImages.forEach((obj)=>{
-        let items = document.createElement('img');
-        items.setAttribute('src', obj.pic);
-        items.setAttribute('class', 'productItem');
-        itemImg.append(items);
+const productWomenNames = () => {
+    productName.replaceChildren();
+    womens.productImages.name.forEach((obj)=>{
+        let txt = document.createElement('p');
+        txt.innerHTML = obj
+        // txt.setAttribute('src', obj.name);
+        // txt.setAttribute('class', '.name');
+        productName.append(txt)
     })
+    // const txt = data("womens");
+    // const newP = document.createElement('p');
+    // newP.textContent = txt;
+
+    // document.querySelector('.product').appendChild(newP);
+
 }
+// function data(type) {
+//     return data[type];
+// }
+// const data = {
+//     womens,
+//     kids,
+//     baby,
+// };
+
 
 // ------------ Kids ------------------------------------- //
 const changeKids = () => {
     changeKidsTopPic(),
     changeKidsProduct(),
     changeKidsSub(),
+    newMainKids(),
     noLogo()
+}
+// subnav + TITLE
+const changeKidsSub = () => {
+    gender.textContent = "Kids";
+    title.textContent = "KIDS";
 }
 //top pic
 const changeKidsTopPic = () => {
@@ -233,6 +271,12 @@ const changeKidsTopPic = () => {
         newImg.classList.add('topImg', 'mainImg');
         newImg.style.marginLeft = "145px";
         mainImage.replaceWith(newImg)
+}
+//main desc
+const newMainKids = () => {
+    mainTitle.textContent = "U AIRism Cotton Crew Neck T-Shirts";
+    mainDesc.textContent = "Smooth, quick-drying AIRism fabric with the look of cotton.";
+    mainPrice.textContent = "$14.90";
 }
 // product
 const changeKidsProduct = () => {
@@ -244,18 +288,15 @@ const changeKidsProduct = () => {
         itemImg.append(items)
     })
 }
-// subnav + TITLE
-const changeKidsSub = () => {
-    gender.textContent = "Kids";
-    title.textContent = "KIDS";
-}
+
 
 // -------- BABY -------------------------------------------- //
 const changeBaby = () => {
+    noLogoNone(),
     changeBabyTopPic(),
     changeBabyProduct(),
     changeBabySub(),
-    noLogoNone()
+    newMainBaby()
 }
 //top pic
 const changeBabyTopPic = () => {
@@ -282,4 +323,16 @@ const changeBabySub = () => {
 }
 const noLogoNone = () => {
     document.querySelector('.mainLogo').style.display = 'none';
+}
+//main desc
+const newMainBaby = () => {
+    mainTitle.textContent = "Baby Matching Sets";
+    mainDesc.textContent = "Matching sets for the little ones.";
+    // mainPrice.textContent = "";
+
+    mainPrice.remove();
+    let button = document.createElement('button');
+    items.setAttribute('class', 'babyButton')
+    button.innerHTML = "Buy"
+    mainText.append(button)
 }

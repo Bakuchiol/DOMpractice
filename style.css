@@ -96,7 +96,7 @@ h1 {
     width: 80%;
 }
 .mainLogo {
-    z-index: 99;
+    z-index: 9;
     position: absolute;
     left: 170px;
     padding-top: 50px;
@@ -146,6 +146,14 @@ h1 {
 .productItem {
     width: 280px;
 }
-.product p {
+.name {
     margin: 10px 0 15px 0;
+    color: black;
+    font-size: 18px;
+}
+.babyButton {
+    height: 40px;
+    padding: 8px;
+    text-align: center;
+    background: white;
 }
