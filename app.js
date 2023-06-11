@@ -169,12 +169,21 @@ const baby = {
 
 let mainImage = document.querySelector('.mainImg');
 let itemImg = document.querySelector('.productItems');
+let gender = document.querySelector('#gender');
+let title = document.querySelector('#role');
+let productName = document.querySelector('.name');
+
+const noLogo = () => {
+    document.querySelector('#air').style.display = 'none';
+    document.querySelector('#imgLogo').style.width = '50%';
+}
 
 // --------- WOMENS ---------- //
 const changeWomens = () => {
     changeWomensProduct(),
     changeWomenTopPic(),
-    changeWomenSub()
+    changeWomenSub(),
+    noLogo()
 }
 // top pic
 const changeWomenTopPic = () => {
@@ -196,17 +205,26 @@ const changeWomensProduct = () => {
 }
 // subnav + TITLE
 const changeWomenSub = () => {
-    let gender = document.querySelector('#gender');
     gender.textContent = "Women";
-    let title = document.querySelector('#role');
     title.textContent = "WOMEN";
+}
+// product names
+const productNames = () => {
+    itemImg.replaceChildren();
+    womens.productImages.forEach((obj)=>{
+        let items = document.createElement('img');
+        items.setAttribute('src', obj.pic);
+        items.setAttribute('class', 'productItem');
+        itemImg.append(items);
+    })
 }
 
 // ------------ Kids ------------------------------------- //
 const changeKids = () => {
     changeKidsTopPic(),
     changeKidsProduct(),
-    changeKidsSub()
+    changeKidsSub(),
+    noLogo()
 }
 //top pic
 const changeKidsTopPic = () => {
@@ -228,9 +246,7 @@ const changeKidsProduct = () => {
 }
 // subnav + TITLE
 const changeKidsSub = () => {
-    let gender = document.querySelector('#gender');
     gender.textContent = "Kids";
-    let title = document.querySelector('#role');
     title.textContent = "KIDS";
 }
 
@@ -238,7 +254,8 @@ const changeKidsSub = () => {
 const changeBaby = () => {
     changeBabyTopPic(),
     changeBabyProduct(),
-    changeBabySub()
+    changeBabySub(),
+    noLogoNone()
 }
 //top pic
 const changeBabyTopPic = () => {
@@ -260,8 +277,9 @@ const changeBabyProduct = () => {
 }
 // subnav + TITLE
 const changeBabySub = () => {
-    let gender = document.querySelector('#gender');
     gender.textContent = "Baby";
-    let title = document.querySelector('#role');
     title.textContent = "BABY";
+}
+const noLogoNone = () => {
+    document.querySelector('.mainLogo').style.display = 'none';
 }

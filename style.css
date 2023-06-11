@@ -96,10 +96,10 @@ h1 {
     width: 80%;
 }
 .mainLogo {
-    z-index: 9;
+    z-index: 99;
     position: absolute;
-    left: 180px;
-    padding-top: 20px;
+    left: 170px;
+    padding-top: 50px;
 }
 .mainLogo img {
     width: 25%;
