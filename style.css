@@ -48,15 +48,18 @@ h1 {
 .mainPromo {
     z-index: 9;
     position: absolute;
-    bottom: 140px;
-    width: 350px;
-    color: #fff;
-    margin-left: 200px;
-    text-shadow: 0 1.5px 1.5px #0009;
+    bottom: -150px;
+    width: 500px;
+    margin-left: 50px;
 }
 .mainPromo > * {
     margin-block-start: 1em;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #fff;
+    text-shadow: 0 1.5px 1.5px #0009;
+}
+.mainPromo h3 {
+    margin-left: 140px;
 }
 /* sale */
 .sale {
