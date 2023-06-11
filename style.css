@@ -26,8 +26,15 @@
     display: flex;
     list-style: none;
     align-items: center;
-    gap: 15px;
+    gap: 25px;
     font-size: 18px;
+}
+.options li {
+    padding-bottom: 5px;
+}
+.options li:hover {
+    border-bottom: solid black;
+    cursor: pointer;
 }
 .rightIcons {
     display: flex;
@@ -36,6 +43,9 @@
     gap: 20px;
     font-size: 12px;
     padding-top: 5px;
+}
+.rightIcons:hover {
+    cursor: pointer;
 }
 .rightIcons span {
     display: flex;
@@ -58,6 +68,9 @@ a {
     display: flex;
     gap: 6px;
     list-style: none;
+    text-decoration: none;
+}
+.subNav a:hover {
     text-decoration: none;
 }
 /* section name */
