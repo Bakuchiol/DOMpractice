@@ -1,0 +1,9 @@
+* {
+    box-sizing: border-box;
+}
+
+
+/* main area */
+.mainImg {
+    background: url("https://im.uniqlo.com/global-cms/spa/resddd8ee57b3209f4f654b77869bc615a6fr.jpg");
+}
