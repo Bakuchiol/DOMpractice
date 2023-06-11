@@ -1,7 +1,5 @@
 const womens = {
     mainImage: "https://im.uniqlo.com/global-cms/spa/res1fd53b8da747181302080cdc632b86bdfr.jpg",
-    subNav: "Womens",
-    mainTitle: "WOMENS",
     mainTitle: "U Crew Neck T-Shirts",
     mainDesc: "An Elevated wardrobe essential designed with careful attention to details",
     mainPrice: "$14.90",
@@ -55,8 +53,6 @@ const womens = {
 // kids
 const kids = {
     mainImage: "https://im.uniqlo.com/global-cms/spa/resa1f97a1bbcf0e402ab9df31f14ce98d9fr.jpg",
-    subNav: "Kids",
-    mainTitle: "KIDS",
     mainTitle: "U AIRism Cotton Crew Neck T-Shirts",
     mainDesc: "Smooth, quick-drying AIRism fabric with the look of cotton.",
     mainPrice: "$14.90",
@@ -114,8 +110,6 @@ const kids = {
 // baby
 const baby = {
     mainImage: "https://im.uniqlo.com/global-cms/spa/rese0655785eaaf5d81ac8ee4aa98214a6afr.jpg",
-    subNav: "Baby",
-    mainTitle: "BABY",
     mainTitle: "Baby Matching Sets",
     mainDesc: "Matching sets for the little ones.",
     mainPrice: "",
@@ -179,7 +173,8 @@ let itemImg = document.querySelector('.productItems');
 // --------- WOMENS ---------- //
 const changeWomens = () => {
     changeWomensProduct(),
-    changeWomenTopPic()
+    changeWomenTopPic(),
+    changeWomenSub()
 }
 // top pic
 const changeWomenTopPic = () => {
@@ -196,14 +191,22 @@ const changeWomensProduct = () => {
         let items = document.createElement('img');
         items.setAttribute('src', obj.pic);
         items.setAttribute('class', 'productItem');
-        itemImg.append(items)
+        itemImg.append(items);
     })
+}
+// subnav + TITLE
+const changeWomenSub = () => {
+    let gender = document.querySelector('#gender');
+    gender.textContent = "Women";
+    let title = document.querySelector('#role');
+    title.textContent = "WOMEN";
 }
 
 // ------------ Kids ------------------------------------- //
 const changeKids = () => {
     changeKidsTopPic(),
-    changeKidsProduct()
+    changeKidsProduct(),
+    changeKidsSub()
 }
 //top pic
 const changeKidsTopPic = () => {
@@ -223,11 +226,19 @@ const changeKidsProduct = () => {
         itemImg.append(items)
     })
 }
+// subnav + TITLE
+const changeKidsSub = () => {
+    let gender = document.querySelector('#gender');
+    gender.textContent = "Kids";
+    let title = document.querySelector('#role');
+    title.textContent = "KIDS";
+}
 
 // -------- BABY -------------------------------------------- //
 const changeBaby = () => {
     changeBabyTopPic(),
-    changeBabyProduct()
+    changeBabyProduct(),
+    changeBabySub()
 }
 //top pic
 const changeBabyTopPic = () => {
@@ -246,4 +257,11 @@ const changeBabyProduct = () => {
         items.setAttribute('class', 'productItem');
         itemImg.append(items)
     })
+}
+// subnav + TITLE
+const changeBabySub = () => {
+    let gender = document.querySelector('#gender');
+    gender.textContent = "Baby";
+    let title = document.querySelector('#role');
+    title.textContent = "BABY";
 }
