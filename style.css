@@ -110,7 +110,7 @@ h1 {
     z-index: 9;
     position: absolute;
     bottom: 30px;
-    width: 500px;
+    width: 530px;
     margin-left: 50px;
 }
 .mainPromo > * {
@@ -152,8 +152,17 @@ h1 {
     font-size: 18px;
 }
 .babyButton {
+    display: none;
     height: 40px;
+    width: 150px;
     padding: 8px;
     text-align: center;
     background: white;
+    opacity: 70%;
+    color: black;
+    text-shadow: none;
+    border: none;
+    margin-left: 140px;
+    position: relative;
+    bottom: 190px;
 }

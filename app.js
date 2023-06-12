@@ -175,6 +175,7 @@ let mainText = document.querySelector('.mainPromo')
 let mainTitle = document.querySelector('#title');
 let mainDesc = document.querySelector('.desc');
 let mainPrice = document.querySelector('#price');
+let babyBtn = document.querySelector('.babyButton');
 // ?
 let productName = document.querySelector('.product');
 let tag = document.querySelector('.name')
@@ -227,29 +228,15 @@ const changeWomensProduct = () => {
 // product names
 const productWomenNames = () => {
     productName.replaceChildren();
-    womens.productImages.name.forEach((obj)=>{
-        let txt = document.createElement('p');
-        txt.innerHTML = obj
-        // txt.setAttribute('src', obj.name);
-        // txt.setAttribute('class', '.name');
-        productName.append(txt)
-    })
-    // const txt = data("womens");
-    // const newP = document.createElement('p');
+    womens.productImages.forEach((txt)=>{
+    let newP = document.createElement('p');
+    newP.setAttribute('src', txt.name);
+    newP.setAttribute('class', 'name')
     // newP.textContent = txt;
-
-    // document.querySelector('.product').appendChild(newP);
-
+    productName.append(newP);
+    // document.querySelectorAll('.product').appendChild(newP);
+})
 }
-// function data(type) {
-//     return data[type];
-// }
-// const data = {
-//     womens,
-//     kids,
-//     baby,
-// };
-
 
 // ------------ Kids ------------------------------------- //
 const changeKids = () => {
@@ -296,6 +283,7 @@ const changeBaby = () => {
     changeBabyTopPic(),
     changeBabyProduct(),
     changeBabySub(),
+    babyAppear(),
     newMainBaby()
 }
 //top pic
@@ -327,12 +315,24 @@ const noLogoNone = () => {
 //main desc
 const newMainBaby = () => {
     mainTitle.textContent = "Baby Matching Sets";
+    mainText.style.marginLeft = "100px";
     mainDesc.textContent = "Matching sets for the little ones.";
+    mainDesc.style.marginBottom = "200px";
+    mainDesc.style.marginLeft = "140px";
+    mainDesc.style.fontSize = "14px";
+}
     // mainPrice.textContent = "";
 
+    // make button ??
+    // mainPrice.remove();
+    // let button = document.createElement('button');
+    // items.setAttribute('class', 'babyButton')
+    // button.innerHTML = "SHOP NOW"
+    // mainText.appendChild(button);
+
+    // button appear
+    const babyAppear = () => {
     mainPrice.remove();
-    let button = document.createElement('button');
-    items.setAttribute('class', 'babyButton')
-    button.innerHTML = "Buy"
-    mainText.append(button)
+    babyBtn.style.display = 'block'
+
 }
