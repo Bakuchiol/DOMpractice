@@ -176,43 +176,53 @@ let baby = {
 // make button in place of price for baby SHOP NOW
 
 let topPic = document.querySelector('.topImg')
-let itemImg = document.querySelector('.productItems');
-let gender = document.querySelector('#gender');
+let itemImg = document.querySelectorAll('.productItem');// each individual product picture
+let clothes = document.querySelector('.product'); // each product div w/ pic and name
+let gender = document.querySelector('#gender'); // how to change list item?
 let title = document.querySelector('#role');
 let mainText = document.querySelector('.mainPromo')
 let mainTitle = document.querySelector('#title');
 let mainDesc = document.querySelector('.desc');
-let mainPrice = document.querySelector('#price');
-let babyBtn = document.querySelector('.babyButton');
+let mainPrice = document.querySelector('#price'); // need for baby -- must delete and replace with button
+let babyBtn = document.querySelector('.babyButton');// new baby button --replacing #price
 // ?
-let productName = document.querySelector('.product');
-let tag = document.querySelector('.name')
+
+let tag = document.querySelector('.name') // name of each product item //how?
 
 // new attempt -- more streamlined
+const magic = (gender) => {
+    transFormer(gender);
+    changeProduct(gender); //not working
+}
+
 
 const transFormer = (gender) => {
     if (gender === "womens"){
-        addText(gender,clothing.womens.subNav)
+        changeSub(clothing.womens.subNav)
         addText(title,clothing.womens.category)
+        noLogo()
         addImage(topPic,clothing.womens.picture)
         addText(mainTitle,clothing.womens.mainTitle)
         addText(mainDesc,clothing.womens.mainDesc)
         addText(mainPrice,clothing.womens.mainPrice)
+        /*---------------------------------------- */
     } else if(gender === "kids"){
-        addText(gender,clothing.kids.subNav)
+        changeSub(clothing.kids.subNav)
         addText(title,clothing.kids.category)
+        noLogo()
         addImage(topPic,clothing.kids.picture)
         addText(mainTitle,clothing.kids.mainTitle)
         addText(mainDesc,clothing.kids.mainDesc)
         addText(mainPrice,clothing.kids.mainPrice)
+        /*---------------------------------------- */
     } else if(gender === "baby"){
-        addText(gender,baby.subNav)
+        changeSub(baby.subNav)
         addText(title,baby.category)
+        noLogo()
         addImage(topPic,baby.picture)
         addText(mainTitle,baby.mainTitle)
         addText(mainDesc,baby.mainDesc)
         addText(mainPrice,baby.mainPrice)
-
     }
 }
 
@@ -230,12 +240,37 @@ const addImage = (target, url) => {
 }
 
 const addText = (target, text) => {
-    target.innerHTML = text
+    target.textContent = text
 }
 
+//attempt to change list item
+const list = document.querySelector('#subs');
 
+const changeSub = (text) => {
+    let listItem = list.children.item(2)
+    listItem.textContent = text
+}
 
+// no logo attempt
+const noNoLogo = () => {
+    document.querySelector('.mainLogo').style.display = 'none';
+}
 
+// change products ????
+const changeProduct = () => {
+    // itemImg.replaceChildren();
+    clothes.replaceChildren()
+    productImages.forEach((obj)=>{
+        let items = document.createElement('img');
+        items.setAttribute('src', obj.pic);
+        items.setAttribute('class', 'productItem');
+        itemImg.append(items);
+    })
+}
+
+// attempt baby button
+
+/*------------------------------------------------------------------------ */
 // --- OlD Code -------
 const noLogo = () => {
     document.querySelector('#air').style.display = 'none';
