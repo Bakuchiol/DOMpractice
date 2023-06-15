@@ -1,5 +1,8 @@
-const womens = {
-    mainImage: "https://im.uniqlo.com/global-cms/spa/res1fd53b8da747181302080cdc632b86bdfr.jpg",
+let clothing = {
+    womens: {
+    subNav: "Women",
+    category: "WOMEN",
+    picture: "https://im.uniqlo.com/global-cms/spa/res1fd53b8da747181302080cdc632b86bdfr.jpg",
     mainTitle: "U Crew Neck T-Shirts",
     mainDesc: "An Elevated wardrobe essential designed with careful attention to details",
     mainPrice: "$14.90",
@@ -49,10 +52,12 @@ const womens = {
             name: 'Accessories',
         },
 ]
-}
+},
 // kids
-const kids = {
-    mainImage: "https://im.uniqlo.com/global-cms/spa/resa1f97a1bbcf0e402ab9df31f14ce98d9fr.jpg",
+kids: {
+    subNav: "Kids",
+    category: "KIDS",
+    picture: "https://im.uniqlo.com/global-cms/spa/resa1f97a1bbcf0e402ab9df31f14ce98d9fr.jpg",
     mainTitle: "U AIRism Cotton Crew Neck T-Shirts",
     mainDesc: "Smooth, quick-drying AIRism fabric with the look of cotton.",
     mainPrice: "$14.90",
@@ -107,9 +112,12 @@ const kids = {
         },
 ]
 }
+}
 // baby
-const baby = {
-    mainImage: "https://im.uniqlo.com/global-cms/spa/rese0655785eaaf5d81ac8ee4aa98214a6afr.jpg",
+let baby = {
+    subNav: "Baby",
+    category: "BABY",
+    picture: "https://im.uniqlo.com/global-cms/spa/rese0655785eaaf5d81ac8ee4aa98214a6afr.jpg",
     mainTitle: "Baby Matching Sets",
     mainDesc: "Matching sets for the little ones.",
     mainPrice: "",
@@ -167,7 +175,7 @@ const baby = {
 
 // make button in place of price for baby SHOP NOW
 
-let mainImage = document.querySelector('.mainImg');
+let topPic = document.querySelector('.topImg')
 let itemImg = document.querySelector('.productItems');
 let gender = document.querySelector('#gender');
 let title = document.querySelector('#role');
@@ -180,6 +188,55 @@ let babyBtn = document.querySelector('.babyButton');
 let productName = document.querySelector('.product');
 let tag = document.querySelector('.name')
 
+// new attempt -- more streamlined
+
+const transFormer = (gender) => {
+    if (gender === "womens"){
+        addText(gender,clothing.womens.subNav)
+        addText(title,clothing.womens.category)
+        addImage(topPic,clothing.womens.picture)
+        addText(mainTitle,clothing.womens.mainTitle)
+        addText(mainDesc,clothing.womens.mainDesc)
+        addText(mainPrice,clothing.womens.mainPrice)
+    } else if(gender === "kids"){
+        addText(gender,clothing.kids.subNav)
+        addText(title,clothing.kids.category)
+        addImage(topPic,clothing.kids.picture)
+        addText(mainTitle,clothing.kids.mainTitle)
+        addText(mainDesc,clothing.kids.mainDesc)
+        addText(mainPrice,clothing.kids.mainPrice)
+    } else if(gender === "baby"){
+        addText(gender,baby.subNav)
+        addText(title,baby.category)
+        addImage(topPic,baby.picture)
+        addText(mainTitle,baby.mainTitle)
+        addText(mainDesc,baby.mainDesc)
+        addText(mainPrice,baby.mainPrice)
+
+    }
+}
+
+
+
+const uploadImg = (target, type) => {
+    let topImg = document.createElement('img')
+    topImg.setAttribute('src', type)
+    topImg.setAttribute('class','topImg')
+    target.append(topImg)
+}
+
+const addImage = (target, url) => {
+    target.setAttribute('src', url)
+}
+
+const addText = (target, text) => {
+    target.innerHTML = text
+}
+
+
+
+
+// --- OlD Code -------
 const noLogo = () => {
     document.querySelector('#air').style.display = 'none';
     document.querySelector('#imgLogo').style.width = '50%';
