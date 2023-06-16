@@ -289,6 +289,7 @@ const changeProductItemsK = () => {
 
 //------------------------------------------womens
 const changeProductItemsW = () => {
+    pot.replaceChildren()
     clothing.womens.productImages.forEach((pic)=>{
     let productGroup = document.createElement('img')
     let clothing = document.createElement('div')
@@ -311,6 +312,7 @@ const changeProductItemsW = () => {
 
 // -------------------------------------------baby
 const changeProductItems = () => {
+    pot.replaceChildren()
     baby.productImages.forEach((pic)=>{
     let productGroup = document.createElement('img')
     let clothing = document.createElement('div')
