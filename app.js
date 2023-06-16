@@ -176,8 +176,6 @@ let baby = {
 // make button in place of price for baby SHOP NOW
 
 let topPic = document.querySelector('.topImg')
-let itemImg = document.querySelectorAll('.productItem');// each individual product picture
-let clothes = document.querySelector('.product'); // each product div w/ pic and name
 let gender = document.querySelector('#gender'); // how to change list item?
 let title = document.querySelector('#role');
 let mainText = document.querySelector('.mainPromo')
@@ -186,8 +184,6 @@ let mainDesc = document.querySelector('.desc');
 let mainPrice = document.querySelector('#price'); // need for baby -- must delete and replace with button
 let babyBtn = document.querySelector('.babyButton');// new baby button --replacing #price
 // ?
-
-let tag = document.querySelector('.name') // name of each product item //how?
 
 // new attempt -- more streamlined
 const magic = (gender) => {
@@ -205,6 +201,9 @@ const transFormer = (gender) => {
         addText(mainTitle,clothing.womens.mainTitle)
         addText(mainDesc,clothing.womens.mainDesc)
         addText(mainPrice,clothing.womens.mainPrice)
+        changeProductItems(womens)
+
+        
         /*---------------------------------------- */
     } else if(gender === "kids"){
         changeSub(clothing.kids.subNav)
@@ -214,6 +213,7 @@ const transFormer = (gender) => {
         addText(mainTitle,clothing.kids.mainTitle)
         addText(mainDesc,clothing.kids.mainDesc)
         addText(mainPrice,clothing.kids.mainPrice)
+        changeProductItems(kids)
         /*---------------------------------------- */
     } else if(gender === "baby"){
         changeSub(baby.subNav)
@@ -223,6 +223,9 @@ const transFormer = (gender) => {
         addText(mainTitle,baby.mainTitle)
         addText(mainDesc,baby.mainDesc)
         addText(mainPrice,baby.mainPrice)
+        newBorn()
+        babyMagic()
+        changeProductItems(baby)        
     }
 }
 
@@ -255,20 +258,53 @@ const changeSub = (text) => {
 const noNoLogo = () => {
     document.querySelector('.mainLogo').style.display = 'none';
 }
+// ----------------------------------------------------------------------------change product pics
 
-// change products ????
-const changeProduct = () => {
-    // itemImg.replaceChildren();
-    clothes.replaceChildren()
-    productImages.forEach((obj)=>{
-        let items = document.createElement('img');
-        items.setAttribute('src', obj.pic);
-        items.setAttribute('class', 'productItem');
-        itemImg.append(items);
-    })
+
+let itemImg = document.querySelector('.productItem');// each individual product picture IMG
+// let clothes = document.querySelector('.product'); // each product div w/ pic and name  DIV
+let pot = document.querySelector('.productItems'); // div wrap
+let tag = document.querySelector('.name') // name of each product item //how?
+
+
+const changeProductItems = () => {
+
+    baby.productImages.forEach((pic)=>{
+    let productGroup = document.createElement('img')
+    let clothing = document.createElement('div')
+    clothing.setAttribute('class', 'product')
+    productGroup.setAttribute('src', pic.pic);
+    productGroup.setAttribute('class', 'productItem');
+
+    let name = document.createElement('p')
+    name.setAttribute('src', pic.name)
+    name.setAttribute('class', 'name')
+
+    pot.append(clothing)
+    clothing.append(productGroup)
+
+    clothing.append(name)
+    name.textContent = pic.name
+})    
 }
 
+
+
 // attempt baby button
+const newBorn = () => {
+    mainText.style.marginLeft = "100px";
+    mainDesc.style.marginBottom = "230px";
+    mainDesc.style.marginLeft = "140px";
+    mainDesc.style.fontSize = "14px";
+}
+// button appear
+const babyMagic = () => {
+    mainPrice.remove();
+    babyBtn.style.display = 'block'
+}
+
+
+
 
 /*------------------------------------------------------------------------ */
 // --- OlD Code -------
@@ -388,7 +424,7 @@ const changeBabyTopPic = () => {
 }
 // product
 const changeBabyProduct = () => {
-    itemImg.replaceChildren();
+    // itemImg.replaceChildren();
     baby.productImages.forEach((obj)=>{
         let items = document.createElement('img');
         items.setAttribute('src', obj.pic);

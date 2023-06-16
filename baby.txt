@@ -1,0 +1,59 @@
+// baby
+let baby = {
+    subNav: "Baby",
+    category: "BABY",
+    picture: "https://im.uniqlo.com/global-cms/spa/rese0655785eaaf5d81ac8ee4aa98214a6afr.jpg",
+    mainTitle: "Baby Matching Sets",
+    mainDesc: "Matching sets for the little ones.",
+    mainPrice: "",
+    productImages: [
+        {
+            pic: "https://im.uniqlo.com/global-cms/spa/res6731d52399131b9ab63750e07a07923dfr.jpg",
+            name: 'Tops',
+        },
+        {
+            pic: "https://im.uniqlo.com/global-cms/spa/resf4ee67e605b8d986adbfce00d40b4301fr.jpg",
+            name: 'Bodysuits',
+        },
+        {
+            pic: "https://im.uniqlo.com/global-cms/spa/res3ae21a6493b12c8bc322da0d22e14d7dfr.jpg",
+            name: 'Pajamas',
+        },
+        {
+            pic: "https://im.uniqlo.com/global-cms/spa/res5f4e02f972caa03f35223ad7b51c6810fr.jpg",
+            name: 'Outerwear',
+        },
+        {
+            pic: "https://im.uniqlo.com/global-cms/spa/res76ac6c8f6d524961740dedbf12df7500fr.jpg",
+            name: 'Shorts',
+        },
+        {
+            pic: "https://im.uniqlo.com/global-cms/spa/res55251d8bed82a4ec53f07ab0b5cf0cc5fr.jpg",
+            name: 'Cropped Leggings',
+        },
+        {
+            pic: "https://im.uniqlo.com/global-cms/spa/res4b64e0abff3fa2cb71f2e4cb37152a2ffr.jpg",
+            name: 'Bottoms',
+        },
+        {
+            pic: "https://im.uniqlo.com/global-cms/spa/resf87388342c780b2242aed358967cc439fr.jpg",
+            name: 'Socks',
+        },
+        {
+            pic: "https://image.uniqlo.com/UQ/ST3/WesternCommon/imagesgoods/444926/item/goods_65_444926.jpg?width=300",
+            name: 'Sport Utility Wear',
+        },
+        {
+            pic: "https://image.uniqlo.com/UQ/ST3/us/imagesgoods/458440/item/usgoods_54_458440.jpg?width=300",
+            name: 'Outerwear',
+        },
+        {
+            pic: "https://image.uniqlo.com/UQ/ST3/WesternCommon/imagesgoods/454937/item/goods_10_454937.jpg?width=300",
+            name: 'Innerwear',
+        },
+        {
+            pic: "https://image.uniqlo.com/UQ/ST3/WesternCommon/imagesgoods/460790/item/goods_32_460790.jpg?width=300",
+            name: 'Accessories',
+        },
+]
+}
