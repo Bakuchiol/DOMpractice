@@ -201,9 +201,8 @@ const transFormer = (gender) => {
         addText(mainTitle,clothing.womens.mainTitle)
         addText(mainDesc,clothing.womens.mainDesc)
         addText(mainPrice,clothing.womens.mainPrice)
-        changeProductItems(womens)
+        changeProductItemsW()
 
-        
         /*---------------------------------------- */
     } else if(gender === "kids"){
         changeSub(clothing.kids.subNav)
@@ -213,7 +212,7 @@ const transFormer = (gender) => {
         addText(mainTitle,clothing.kids.mainTitle)
         addText(mainDesc,clothing.kids.mainDesc)
         addText(mainPrice,clothing.kids.mainPrice)
-        changeProductItems(kids)
+        changeProductItemsK()
         /*---------------------------------------- */
     } else if(gender === "baby"){
         changeSub(baby.subNav)
@@ -225,7 +224,7 @@ const transFormer = (gender) => {
         addText(mainPrice,baby.mainPrice)
         newBorn()
         babyMagic()
-        changeProductItems(baby)        
+        changeProductItems()        
     }
 }
 
@@ -266,9 +265,52 @@ let itemImg = document.querySelector('.productItem');// each individual product 
 let pot = document.querySelector('.productItems'); // div wrap
 let tag = document.querySelector('.name') // name of each product item //how?
 
+//-----------------------------------------kids
+const changeProductItemsK = () => {
+    pot.replaceChildren()
+    clothing.kids.productImages.forEach((pic)=>{
+    let productGroup = document.createElement('img')
+    let clothing = document.createElement('div')
+    clothing.setAttribute('class', 'product')
+    productGroup.setAttribute('src', pic.pic);
+    productGroup.setAttribute('class', 'productItem');
 
+    let name = document.createElement('p')
+    name.setAttribute('src', pic.name)
+    name.setAttribute('class', 'name')
+    pot.append(clothing)
+    clothing.append(productGroup)
+
+    clothing.append(name)
+    name.textContent = pic.name
+})    
+}
+
+
+//------------------------------------------womens
+const changeProductItemsW = () => {
+    clothing.womens.productImages.forEach((pic)=>{
+    let productGroup = document.createElement('img')
+    let clothing = document.createElement('div')
+    clothing.setAttribute('class', 'product')
+    productGroup.setAttribute('src', pic.pic);
+    productGroup.setAttribute('class', 'productItem');
+
+    let name = document.createElement('p')
+    name.setAttribute('src', pic.name)
+    name.setAttribute('class', 'name')
+
+    pot.append(clothing)
+    clothing.append(productGroup)
+
+    clothing.append(name)
+    name.textContent = pic.name
+})    
+}
+
+
+// -------------------------------------------baby
 const changeProductItems = () => {
-
     baby.productImages.forEach((pic)=>{
     let productGroup = document.createElement('img')
     let clothing = document.createElement('div')
