@@ -188,26 +188,24 @@ let babyBtn = document.querySelector('.babyButton');// new baby button --replaci
 // new attempt -- more streamlined
 const magic = (gender) => {
     transFormer(gender);
-    changeProduct(gender); //not working
 }
 
 
 const transFormer = (gender) => {
-    if (gender === "womens"){
+    if (gender === "womens"){        
         changeSub(clothing.womens.subNav)
         addText(title,clothing.womens.category)
-        noLogo()
+        noNoLogo()
         addImage(topPic,clothing.womens.picture)
         addText(mainTitle,clothing.womens.mainTitle)
         addText(mainDesc,clothing.womens.mainDesc)
         addText(mainPrice,clothing.womens.mainPrice)
         changeProductItemsW()
-
         /*---------------------------------------- */
     } else if(gender === "kids"){
         changeSub(clothing.kids.subNav)
         addText(title,clothing.kids.category)
-        noLogo()
+        noNoLogo()
         addImage(topPic,clothing.kids.picture)
         addText(mainTitle,clothing.kids.mainTitle)
         addText(mainDesc,clothing.kids.mainDesc)
@@ -227,9 +225,6 @@ const transFormer = (gender) => {
         changeProductItems()        
     }
 }
-
-
-
 const uploadImg = (target, type) => {
     let topImg = document.createElement('img')
     topImg.setAttribute('src', type)
